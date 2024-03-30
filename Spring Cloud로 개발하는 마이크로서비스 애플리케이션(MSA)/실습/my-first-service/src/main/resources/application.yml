@@ -6,6 +6,6 @@ spring:
     name: my-first-service
 
 eureka:
-    client:
-        register-with-eureka: true
-        fetch-registry: true
+  client:
+    register-with-eureka: false
+    fetch-registry: false
