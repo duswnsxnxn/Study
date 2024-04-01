@@ -1,5 +1,5 @@
 ### 회원가입
-POST http://localhost:8080/users
+POST http://localhost:8000/user-service/users
 Content-Type: application/json
 
 {
@@ -7,3 +7,9 @@ Content-Type: application/json
   "name": "김연준",
   "pwd": "1234"
 }
+
+### 사용자 전체 조회
+GET http://localhost:8000/user-service/users
+
+### 사용자 조회
+GET http://localhost:8000/user-service/users/d2a25d3e-922d-4815-b3ba-88ecccd3ed9b

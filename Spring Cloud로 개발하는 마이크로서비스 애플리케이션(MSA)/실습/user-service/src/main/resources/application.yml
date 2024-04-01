@@ -5,13 +5,16 @@ spring:
     name: user-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/user_db?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/user_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
     username: root
     password: 1234
-
+  jpa:
+    hibernate:
+      ddl-auto: validate
 eureka:
   instance:
     instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
+    hostname: localhost # 유레카 서버에 등록할 서비스의 호스트명
   client:
     register-with-eureka: true # 유레카 서버에 서비스를 등록할지 여부
     fetch-registry: true # 유레카 서버에 등록된 서비스 목록을 가져올지 여부
