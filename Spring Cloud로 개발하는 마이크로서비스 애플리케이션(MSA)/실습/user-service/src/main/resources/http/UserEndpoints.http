@@ -1,0 +1,9 @@
+### 회원가입
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "email": "duswnsxnxn@naver.com",
+  "name": "김연준",
+  "pwd": "1234"
+}
