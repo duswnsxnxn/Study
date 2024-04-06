@@ -15,12 +15,12 @@ spring:
 eureka:
   instance:
     instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}}
-    hostname: localhost # ??? ??? ??? ???? ????
+    hostname: localhost # Eureka 서버에 등록할 때 사용할 호스트명이다. 기본값은 localhost이다.
   client:
-    register-with-eureka: true # ??? ??? ???? ???? ??
-    fetch-registry: true # ??? ??? ??? ??? ??? ???? ??
+    register-with-eureka: true # 서버 등록  여부를 결정하는 속성이다. true로 설정하면 서버로 등록된다. false로 설정하면 서버로 등록되지 않는다. 기본값은 true이다.
+    fetch-registry: true # 서버로부터 등록 정보를 가져올지 여부를 결정하는 속성이다. true로 설정하면 서버로부터 등록 정보를 가져온다. false로 설정하면 서버로부터 등록 정보를 가져오지 않는다. 기본값은 true이다.
     service-url:
       defaultZone: http://localhost:8761/eureka/
 logging:
   level:
-    com.example.catalogservice: DEBUG
+    com.example.catalog-service: DEBUG

@@ -1,0 +1,4 @@
+### 카탈로그
+GET http://localhost:8000/catalog-service/catalogs
+Content-Type: application/json
+accept: application/json

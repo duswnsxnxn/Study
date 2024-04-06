@@ -20,16 +20,16 @@ import java.util.List;
 @RequestMapping("/catalog-service")
 public class CatalogController {
 
-    Environment env;
-    CatalogService catalogService;
+    private final Environment env;
+    private final CatalogService catalogService;
 
     @GetMapping("/health_check")
     public String status() {
         return String.format("It's Working in Catalog Service on PORT %s", env.getProperty("local.server.port"));
     }
 
-    @GetMapping("/users")
-    public ResponseEntity<List<ResponseCatalog>> getUsers() {
+    @GetMapping("/catalogs")
+    public ResponseEntity<List<ResponseCatalog>> getCatalogs() {
         Iterable<CatalogEntity> catalogList = catalogService.getAllCatalogs();
 
         List<ResponseCatalog> result = new ArrayList<>();

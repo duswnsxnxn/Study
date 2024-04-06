@@ -3,6 +3,8 @@ package com.example.catalogservice.jpa;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -24,6 +26,6 @@ public class CatalogEntity implements Serializable {
     private Integer unitPrice;
 
     @Column(nullable = false, updatable = false, insertable = false)
-    @ColumnDefault(value = "CURRENT_TIMESTAMP")
+    @CreatedDate
     private Date createdAt;
 }
