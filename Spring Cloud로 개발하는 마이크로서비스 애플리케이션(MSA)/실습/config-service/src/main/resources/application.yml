@@ -8,4 +8,4 @@ spring:
     config:
       server:
         git:
-          uri: file:///C:/Users/duswn/Desktop/자료/공부/git-local-repo
+          uri: file:///C:/Users/duswn/Desktop/자료/공부/깃허브 정리/Spring Cloud로 개발하는 마이크로서비스 애플리케이션(MSA)/실습/git-local-repo
