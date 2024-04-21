@@ -4,8 +4,8 @@ import com.example.userservice.dto.UserDto;
 import com.example.userservice.jpa.UserEntity;
 import com.example.userservice.service.UserService;
 import com.example.userservice.vo.Greeting;
-import com.example.userservice.vo.ResponseUser;
 import com.example.userservice.vo.RequestUser;
+import com.example.userservice.vo.ResponseUser;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user-service")
+@RequestMapping("/")
 @RequiredArgsConstructor
 public class UserController {
 
@@ -28,7 +28,12 @@ public class UserController {
 
     @GetMapping("/health_check")
     public String status() {
-        return String.format("It's Working in User Service on PORT %s", env.getProperty("local.server.port"));
+        return String.format("It's Working in User Service" +
+                ", port(local.server.port)=" + env.getProperty("local.server.port") +
+                ", port(server.port)=" + env.getProperty("server.port") +
+                ", token secret=" + env.getProperty("token.secret") +
+                ", token expiration time=" + env.getProperty("token.expiration-time")
+        );
     }
 
     @GetMapping("/welcome")
