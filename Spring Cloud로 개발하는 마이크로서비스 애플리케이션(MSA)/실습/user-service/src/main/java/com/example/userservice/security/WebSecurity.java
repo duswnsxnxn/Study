@@ -56,7 +56,7 @@ public class WebSecurity {
                                 .requestMatchers(new AntPathRequestMatcher("/users", "POST")).permitAll()
                                 .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
                                 .requestMatchers("/**").access(
-                                        new WebExpressionAuthorizationManager("hasIpAddress('127.0.0.1') or hasIpAddress('::1') or hasIpAddress('192.168.50.1')"))
+                                        new WebExpressionAuthorizationManager("hasIpAddress('127.0.0.1') or hasIpAddress('192.168.50.1')"))
                                 .anyRequest().authenticated()
                 )
                 .authenticationManager(authenticationManager)
