@@ -3,9 +3,18 @@ POST http://localhost:8000/user-service/users
 Content-Type: application/json
 
 {
-  "email": "duswnsxnxn@naver.com",
+  "email": "duswnsxnxn@naver.co.kr",
   "name": "김연준",
   "pwd": "1234"
+}
+
+### 로그인
+POST http://localhost:8000/user-service/login
+Content-Type: application/json
+
+{
+  "email": "duswnsxnxn@naver.co.kr",
+  "password": "1234"
 }
 
 ### 사용자 전체 조회
