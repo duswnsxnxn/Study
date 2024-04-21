@@ -1,0 +1,18 @@
+### 상태확인
+GET http://localhost:8000/order-service/health_check
+accept: application/json
+
+### 주문
+POST http://localhost:8000/order-service/d2a25d3e-922d-4815-b3ba-88ecccd3ed9b/orders
+content-type: application/json
+accept: application/json
+
+{
+  "productId": "CATALOG-001",
+  "qty": 10,
+  "unitPrice": 1500
+}
+
+### 회원의 주문들 조회
+GET http://localhost:8000/order-service/d2a25d3e-922d-4815-b3ba-88ecccd3ed9b/orders
+accept: application/json
